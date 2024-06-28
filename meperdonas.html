@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas, mi amor?</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container" id="messageBox">
+        <h1>¿Me perdonas, mi amor?</h1>
+        <img src="Imagenes\meper-donas.gif" alt="Imagen principal">
+        <div>
+            <button class="yes" onclick="forgive()">Sí</button>
+            <button class="no" onclick="moveBox()">No</button>
+        </div>
+    </div>
+
+    <div class="message" id="loveMessage">
+        <h1>Te amo mucho, mi niña hermosa</h1>
+        <img src="Imagenes\rocky7.gif" alt="Imagen de amor">
+    </div>
+
+    <script>
+        function forgive() {
+            document.getElementById('messageBox').style.display = 'none';
+            document.getElementById('loveMessage').style.display = 'block';
+        }
+
+        function moveBox() {
+            const box = document.getElementById('messageBox');
+            const maxX = window.innerWidth - box.offsetWidth;
+            const maxY = window.innerHeight - box.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            box.style.left = randomX + 'px';
+            box.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
